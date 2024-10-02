@@ -16,9 +16,22 @@ Requires the following technologies be installed on the hosting server:
    ```bash
    git clone <repository-url>
    cd <repository-directory>
-2. Start the containers:
+2. Copy the `.env.example` file to `.env`:
+    ```bash
+    cp .env.example .env
+3. Install dependencies:
+    ```bash
+    composer install
+4. Start the containers:
     ```bash
    docker-compose up -d
+5. Generate keys for application:
+    ```bash
+    php artisan key:generate
+
+6. Run migrations and seed the database:
+    ```bash
+    php artisan migrate:fresh --seed
 
 ### That's it! After these steps, the service will:
 
